@@ -30,7 +30,7 @@ To run your backend on a local server, navigate into the `api` and type in the f
 
 To run your frontend on a local server, navigate into the `airport-CRUD-app` folder and run the following command:
 
-    ng serve
+    npm start
 
 
 ## build
