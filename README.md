@@ -9,7 +9,7 @@ A one-stop management application for all your investments.
 - GUI using React
 
 ## Requirements
-- 16.13.1 
+- React 16.13.1 
 
 ## Installation
 Clone this repository to your local machine and then `cd` into the folder where you've cloned the project.
