@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const db = require('./database/index');
 
 // Route imports
+const accountRoutes = require('./routes/accounts');
 
 //Configure knex's promise to global promise
 db.promise = global.Promise;
@@ -33,5 +34,6 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.use('/api/accounts', accountRoutes);
 
 module.exports = app;
