@@ -10,6 +10,8 @@ A one-stop management application for all your investments.
 
 ## Requirements
 - React 16.13.1 
+- Express 4.17.1
+- Node 12.14.1
 
 ## Installation
 Clone this repository to your local machine and then `cd` into the folder where you've cloned the project.
