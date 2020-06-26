@@ -1,7 +1,9 @@
 import React from 'react';
-import profile from '../assets/profile.jpg'
+import profile from '../assets/profile.jpg';
+import * as actionTypes from '../store/actions';
+import { connect } from 'react-redux';
 
-function Hello() {
+function Hello(props) {
     return (
         <div className="sidebar">
             <h1 className="text-center">Wealth</h1>
@@ -14,11 +16,11 @@ function Hello() {
             <h3>Navigation</h3>
             <div className="navbar">
                 <ul className="nav flex-column">
-                    <li className="nav-item">
-                        <a className="active pl-4" href="">Active</a>
+                    <li onClick={props.onAddValue} className="nav-item">
+                        <a className="active pl-4">Active</a>
                     </li>
-                    <li className="nav-item">
-                        <a className="pl-4" href="">Stock Portfolio</a>
+                    <li onClick={props.onRemoveValue} className="nav-item">
+                        <a className="pl-4">Stock Portfolio</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="">Link</a>
@@ -32,4 +34,17 @@ function Hello() {
     )
 };
 
-export default Hello;
+const mapStateToProps = state => {
+    return {
+        val: state.testData
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddValue: () => dispatch({ type: actionTypes.ADD_VALUE }),
+        onRemoveValue: () => dispatch({ type: actionTypes.REMOVE_VALUE })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hello);
