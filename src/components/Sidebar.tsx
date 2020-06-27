@@ -4,6 +4,7 @@ import * as actionTypes from '../store/actions';
 import { connect } from 'react-redux';
 import { faBolt, faTachometerAlt, faChartArea, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import getStocks from '../api/stokcs-api';
 
 function Hello(props) {
     return (
@@ -30,7 +31,7 @@ function Hello(props) {
                         <FontAwesomeIcon icon={faChartArea} size="lg" />
                         <a>Stocks</a>
                     </li>
-                    <li className="nav-item">
+                    <li onClick={getStocks} className="nav-item">
                         <FontAwesomeIcon icon={faHome} size="lg" />
                         <a>Properties</a>
                     </li>
