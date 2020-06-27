@@ -40,13 +40,13 @@ function Hello(props) {
     )
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         val: state.testData
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         onAddValue: () => dispatch({ type: actionTypes.ADD_VALUE }),
         onRemoveValue: () => dispatch({ type: actionTypes.REMOVE_VALUE })
