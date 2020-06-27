@@ -44,4 +44,4 @@ Your app is ready to be deployed!
 
 ## Useful commands
 In order to create a new migration, enter the api folder and use:
-````npm knex migrate:make name_of_migration
+    npx knex migrate:make name_of_migration
