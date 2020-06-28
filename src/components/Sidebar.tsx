@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { faBolt, faTachometerAlt, faChartArea, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import getStocks from '../api/stokcs-api';
+import { NavLink } from 'react-router-dom';
 
 function Hello(props) {
     return (
@@ -25,15 +26,15 @@ function Hello(props) {
                 <ul className="nav flex-column">
                     <li onClick={props.onAddValue} className="nav-item">
                         <FontAwesomeIcon icon={faTachometerAlt} size="lg" />
-                        <a className="active">Dashboard</a>
+                        <NavLink to="/">Dashboard</NavLink>
                     </li>
                     <li onClick={props.onRemoveValue} className="nav-item">
                         <FontAwesomeIcon icon={faChartArea} size="lg" />
-                        <a>Stocks</a>
+                        <NavLink to="/stocks">Stocks</NavLink>
                     </li>
                     <li onClick={getStocks} className="nav-item">
                         <FontAwesomeIcon icon={faHome} size="lg" />
-                        <a>Properties</a>
+                        <NavLink to="/properties">Properties</NavLink>
                     </li>
                 </ul>
             </div>
