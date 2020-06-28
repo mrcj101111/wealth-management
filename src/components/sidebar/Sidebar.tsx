@@ -1,10 +1,10 @@
 import React from 'react';
-import profile from '../assets/profile.jpg';
-import * as actionTypes from '../store/actions';
+import profile from '../../assets/profile.jpg';
+import * as actionTypes from '../../store/actions';
 import { connect } from 'react-redux';
 import { faBolt, faTachometerAlt, faChartArea, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import getStocks from '../api/stokcs-api';
+import getStocks from '../../api/stokcs-api';
 import { NavLink } from 'react-router-dom';
 
 function Hello(props) {

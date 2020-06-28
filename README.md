@@ -9,8 +9,7 @@ A one-stop management application for all your investments.
 - GUI using React
 
 ## Requirements
-- React 16.13.1 
-- Express 4.17.1
+- PostgreSQL
 - Node 12.14.1
 
 ## Installation

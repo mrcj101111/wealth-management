@@ -3,10 +3,10 @@ import './App.scss';
 import { Route, Switch } from 'react-router-dom';
 
 //Components
-import Sidebar from './components/Sidebar';
-import Dashboard from './components/Dashboard';
-import Stocks from './components/Stocks';
-import Properties from './components/Properties';
+import Sidebar from './components/sidebar/Sidebar';
+import Dashboard from './components/dashboard/Dashboard';
+import Stocks from './components/stocks/Stocks';
+import Properties from './components/properties/Properties';
 
 function App() {
   return (
