@@ -9,7 +9,12 @@ class Stocks extends React.Component {
 
     render() {
         return (
-            <h1>stocks</h1>
+            <>
+<h1>stocks</h1>
+{this.props.stocks.length < 0 ? 
+"You don't have any stocks loaded. Please add stocks by clicking on the button": "this.props.stocks"}
+
+            </>
         )
     
     }
