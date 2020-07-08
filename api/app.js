@@ -4,7 +4,7 @@ const db = require('./database/index');
 
 // Route imports
 const accountRoutes = require('./routes/accounts');
-const stocksRoutes = require('./routes/stocks')
+const stocksRoutes = require('./routes/stocks');
 
 //Configure knex's promise to global promise
 db.promise = global.Promise;
@@ -15,7 +15,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 //Initiate app
 const app = express();
 
-app.listen('3000', () => console.log('Server running on http://localhost:3000'));
+app.listen('8000', () => console.log('Server running on http://localhost:8000'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
