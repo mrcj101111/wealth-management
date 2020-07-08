@@ -49,3 +49,19 @@ exports.addStock = (req, res) => {
         }
     })
 }
+
+// Delete stock
+exports.deleteStock = (req, res) => {
+    db('stocks')
+        .where('stock_id', req.params.id)
+        .del().then(result => {
+            res.status(201).json({
+                message: 'Stock successfully deleted!'
+            })
+        }).catch(err => {
+            console.log(err)
+            res.status(500).json({
+                message: 'Oops! Something went wrong, please try again later.'
+            })
+        })
+}

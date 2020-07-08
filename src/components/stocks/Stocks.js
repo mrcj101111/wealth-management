@@ -11,7 +11,8 @@ class Stocks extends React.Component {
         return (
             <>
 <h1>stocks</h1>
-{this.props.stocks.length < 0 ? 
+{console.log(this.props.stocks.length)}
+{this.props.stocks.length <= 0 ? 
 "You don't have any stocks loaded. Please add stocks by clicking on the button": "this.props.stocks"}
 
             </>
