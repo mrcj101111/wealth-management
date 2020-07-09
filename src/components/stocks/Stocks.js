@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { getStocksFromApi } from '../../store/actions'
+import { getStocksFromApi } from '../../store/actions';
+import noStock from './NoStock';
+import AddStock from './AddStock'
+import { Route } from 'react-router-dom';
 
 class Stocks extends React.Component {
     componentDidMount() {
@@ -10,14 +13,12 @@ class Stocks extends React.Component {
     render() {
         return (
             <>
-<h1>stocks</h1>
-{console.log(this.props.stocks.length)}
-{this.props.stocks.length <= 0 ? 
-"You don't have any stocks loaded. Please add stocks by clicking on the button": "this.props.stocks"}
-
+                <h1>Stocks</h1>
+                {this.props.stocks.length <= 0 ? <Route exact path="/stocks" component={noStock} /> : "this.props.stocks"}
+                <Route exact path="/stocks/add-stock" component={AddStock} />
             </>
         )
-    
+
     }
 }
 

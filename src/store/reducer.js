@@ -22,8 +22,9 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 stocks: action.payload.stocks
             }
+        default:
+            return state;
     }
-    return state;
 };
 
 export default reducer;
