@@ -1,5 +1,24 @@
 /* This application uses BEM methodology for css naming 
 For more information, please visit http://getbem.com/ */
 
-@import './components/sidebar/Sidebar.scss';
-@import './components/stocks/Stocks.scss';
+@import "./components/sidebar/Sidebar.scss";
+@import "./components/stocks/Stocks.scss";
+
+.main-section {
+    margin-top: 20px;
+}
+
+.main-section__col {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    .main-section__back-button {
+        color: grey;
+        &:hover {
+            color: darken($color: rgb(82, 82, 82), $amount: 10%);
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: ease 0.4s;
+        }
+    }
+}
