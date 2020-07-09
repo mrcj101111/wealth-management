@@ -13,7 +13,7 @@ class Stocks extends React.Component {
     render() {
         return (
             <>
-                <h1>Stocks</h1>
+                <h1 className="Main-heading">Stocks</h1>
                 {this.props.stocks.length <= 0 ? <Route exact path="/stocks" component={noStock} /> : "this.props.stocks"}
                 <Route exact path="/stocks/add-stock" component={AddStock} />
             </>
