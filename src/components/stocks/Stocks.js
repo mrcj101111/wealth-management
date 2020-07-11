@@ -27,7 +27,7 @@ class Stocks extends React.Component {
                         }
                     </div>
                 </div>
-                {!this.props.stocks.length <= 0 ? <Route exact path="/stocks" component={noStock} /> : "this.props.stocks"}
+                {this.props.stocks.length <= 0 ? <Route exact path="/stocks" component={noStock} /> : "this.props.stocks"}
                 <Route exact path="/stocks/add-stock" component={AddStock} />
             </div>
         )

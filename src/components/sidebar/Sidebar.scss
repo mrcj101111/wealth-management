@@ -30,18 +30,20 @@
 }
 
 .navbar {
-    padding: 0;
+    padding: 0 !important;
     margin-top: 25px;
     ul {
         margin: auto;
+        width: 100%;
         li {
-            margin-top: 10px;
-            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px 0 10px 10px;
             &:hover {
-                color: darken($color: white, $amount: 20%);
+                background: darken($color: #2a3f54, $amount: 2%);
                 cursor: pointer;
             }
             a {
+                color: white;
                 font-size: 11px;
                 display: block;
                 padding-left: 0;
