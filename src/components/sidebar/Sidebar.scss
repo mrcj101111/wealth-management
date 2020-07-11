@@ -35,20 +35,25 @@
     ul {
         margin: auto;
         width: 100%;
-        a {
-            color: white;
-            font-size: 12px;
-            padding-left: 0;
-            width: 100%;
-            display: block;
-            padding: 10px 0;
-            text-decoration: none;
-            &:hover {
+        li {
+            .active {
                 background: darken($color: #2a3f54, $amount: 2%);
-                cursor: pointer;
             }
-            svg {
+            a {
+                color: white;
+                font-size: 12px;
+                padding-left: 0;
+                width: 100%;
                 display: block;
+                padding: 10px 0;
+                text-decoration: none;
+                &:hover {
+                    background: darken($color: #2a3f54, $amount: 2%);
+                    cursor: pointer;
+                }
+                svg {
+                    display: block;
+                }
             }
         }
     }

@@ -24,7 +24,7 @@ function Hello(props) {
             <div className="navbar">
                 <ul className="nav flex-column">
                     <li onClick={props.onAddValue} className="nav-item">
-                        <NavLink to="/">
+                        <NavLink exact to="/" >
                             <FontAwesomeIcon icon={faTachometerAlt} size="lg" />
                             Dashboard
                         </NavLink>
