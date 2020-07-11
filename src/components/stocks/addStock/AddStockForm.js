@@ -24,7 +24,6 @@ const AddStockForm = (props) => {
     }
 
     const handleSubmit = (event) => {
-        const form = event.currentTarget;
         event.preventDefault();
         event.persist();
         addStockToApi(stock.symbol, stock.companyName, stock.amountOfShares, stock.purchasePrice).then(resp => {

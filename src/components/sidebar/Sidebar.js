@@ -24,16 +24,22 @@ function Hello(props) {
             <div className="navbar">
                 <ul className="nav flex-column">
                     <li onClick={props.onAddValue} className="nav-item">
-                        <FontAwesomeIcon icon={faTachometerAlt} size="lg" />
-                        <NavLink to="/">Dashboard</NavLink>
+                        <NavLink to="/">
+                            <FontAwesomeIcon icon={faTachometerAlt} size="lg" />
+                            Dashboard
+                        </NavLink>
                     </li>
                     <li onClick={props.onRemoveValue} className="nav-item">
-                        <FontAwesomeIcon icon={faChartArea} size="lg" />
-                        <NavLink to="/stocks">Stocks</NavLink>
+                        <NavLink to="/stocks">
+                            <FontAwesomeIcon icon={faChartArea} size="lg" />
+                            Stocks
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <FontAwesomeIcon icon={faHome} size="lg" />
-                        <NavLink to="/properties">Properties</NavLink>
+                        <NavLink to="/properties">
+                            <FontAwesomeIcon icon={faHome} size="lg" />
+                            Properties
+                        </NavLink>
                     </li>
                 </ul>
             </div>
