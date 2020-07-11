@@ -20,7 +20,7 @@ export const getStocksFromApi = () => {
                 dispatch(getStocks(stocks))
             })
             .catch(err =>
-                dispatch(console.log(err))
+                console.log(err)
             )
     }
 }
