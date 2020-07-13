@@ -9,14 +9,23 @@ exports.getStocks = (req, res) => {
         .select().then(result => {
             obj = result.map(stocks => {
                 return historyPrices(Object.values(stocks)[1]).then(price => {
-                    const prevClose = Object.values(price)[3];
+                    const prevClosePrice = Object.values(price)[3];
+                    const cost = stocks.amount_of_shares * stocks.purchase_price;
+                    const marketValue = stocks.amount_of_shares * prevClosePrice;
+                    const gainOrLoss = marketValue - cost;
+                    const growth = gainOrLoss/cost;
+
                     return {
                         id: stocks.stock_id,
                         symbol: stocks.symbol,
                         company: stocks.company_name,
                         shares: stocks.amount_of_shares,
                         purchase_price: stocks.purchase_price,
-                        prevPrice: prevClose,
+                        prevClosePrice: prevClosePrice,
+                        cost: cost,
+                        marketValue: marketValue,
+                        gainOrLoss: gainOrLoss,
+                        growth: growth,
                     }
                 })
             })
