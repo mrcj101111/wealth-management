@@ -1,21 +1,31 @@
 const express = require('express');
 const db = require('../database');
+const historyPrices = require('../api/stockHistoryPrices');
+const { compose } = require('redux');
 
 // Get Stocks
 exports.getStocks = (req, res) => {
     db('stocks')
         .select().then(result => {
-            obj = result.map(data => {
-                return {
-                    id: data.stock_id,
-                    symbol: data.symbol,
-                    company: data.company_name,
-                    shares: data.amount_of_shares,
-                    purchase_price: data.purchase_price
-                }
+            obj = result.map(stocks => {
+                return historyPrices(Object.values(stocks)[1]).then(price => {
+                    const prevClose = Object.values(price)[3];
+                    return {
+                        id: stocks.stock_id,
+                        symbol: stocks.symbol,
+                        company: stocks.company_name,
+                        shares: stocks.amount_of_shares,
+                        purchase_price: stocks.purchase_price,
+                        prevPrice: prevClose,
+                    }
+                })
             })
-            res.status(200).json(obj);
-        }).catch(err => {
+            Promise.all(obj).then(data => {
+                vaa = data.map(values => values)
+                res.status(200).json(vaa)
+            })
+        })
+        .catch(err => {
             console.log(err)
             res.status(500).json({
                 message: 'Oops! Something went wrong, please try again later.'
