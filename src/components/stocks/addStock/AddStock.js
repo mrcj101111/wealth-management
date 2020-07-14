@@ -5,18 +5,14 @@ import { getStocksFromApi } from '../../../store/actions';
 
 class AddStock extends React.Component {
 
-    componentDidMount() {
-        this.props.dispatch(getStocksFromApi());
-    }
-
-    componentDidUpdate() {
+    updateState = () => {
         this.props.dispatch(getStocksFromApi());
     }
 
     render() {
         return (
             <>
-                <AddStockForm {...this.props} />
+                <AddStockForm {...this.props} updateState={this.updateState} />
             </>
         )
     }

@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
 import addStockToApi from '../../../services/Api.service';
+import { getStocksFromApi } from '../../../store/actions';
 
 const AddStockForm = (props) => {
     const [validated, setValidated] = useState(false);
@@ -28,10 +29,13 @@ const AddStockForm = (props) => {
         event.persist();
         addStockToApi(stock.symbol, stock.companyName, stock.amountOfShares, stock.purchasePrice).then(resp => {
             if (resp === 201) {
-                props.history.push('/stocks')
+                props.updateState();
+                props.history.push('/stocks');
             } else if (resp === 409) {
                 event.preventDefault();
                 setError({ error: 'Oops, stock already exists. Please add a different stock.' })
+            } else if (resp === 204) {
+                setError({ error: 'Please fill out all fields.' })
             } else {
                 setError({ error: 'Oops, something went wrong. Please try again later.' })
             }
