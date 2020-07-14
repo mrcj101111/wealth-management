@@ -1,6 +1,6 @@
 const express = require('express');
 const db = require('../database');
-const getLatestPrice = require('../api/stockPriceScraper');
+const getLatestPrice = require('../scraper/stockPriceScraper');
 
 // Get Stocks
 exports.getStocks = (req, res) => {
