@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-const noStock = (props) => {
+const NoStock = (props) => {
     return (
         <>
             <p>You do not have any stocks yet. Please click the button below to add stocks.</p>
@@ -14,4 +14,4 @@ const noStock = (props) => {
     )
 }
 
-export default noStock;
+export default NoStock;

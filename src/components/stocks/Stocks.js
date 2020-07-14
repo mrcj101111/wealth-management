@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { getStocksFromApi } from '../../store/actions';
-import noStock from './NoStock';
+import NoStock from './NoStock';
 import AddStock from './addStock/AddStock'
 import { Route } from 'react-router-dom';
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import StockList from './stockList/StockList';
 
 class Stocks extends React.Component {
     componentDidMount() {
@@ -27,7 +28,7 @@ class Stocks extends React.Component {
                         }
                     </div>
                 </div>
-                {!this.props.stocks.length <= 0 ? <Route exact path="/stocks" component={noStock} /> : "this.props.stocks"}
+                {this.props.stocks.length <= 0 ? <NoStock /> : <StockList />}
                 <Route exact path="/stocks/add-stock" component={AddStock} />
             </div>
         )
