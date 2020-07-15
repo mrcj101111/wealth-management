@@ -1,12 +1,10 @@
 import React from 'react';
 import profile from '../../assets/profile.jpg';
-import * as actionTypes from '../../store/actions';
-import { connect } from 'react-redux';
 import { faBolt, faTachometerAlt, faChartArea, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 
-function Hello(props) {
+function Hello() {
     return (
         <div className="sidebar">
             <div className="title">
@@ -23,13 +21,13 @@ function Hello(props) {
             </div>
             <div className="navbar">
                 <ul className="nav flex-column">
-                    <li onClick={props.onAddValue} className="nav-item">
+                    <li className="nav-item">
                         <NavLink exact to="/" >
                             <FontAwesomeIcon icon={faTachometerAlt} size="lg" />
                             Dashboard
                         </NavLink>
                     </li>
-                    <li onClick={props.onRemoveValue} className="nav-item">
+                    <li className="nav-item">
                         <NavLink to="/stocks">
                             <FontAwesomeIcon icon={faChartArea} size="lg" />
                             Stocks
@@ -47,17 +45,4 @@ function Hello(props) {
     )
 };
 
-const mapStateToProps = (state) => {
-    return {
-        val: state.testData
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onAddValue: () => dispatch({ type: actionTypes.ADD_VALUE }),
-        onRemoveValue: () => dispatch({ type: actionTypes.REMOVE_VALUE })
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default Hello;

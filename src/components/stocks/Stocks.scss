@@ -11,3 +11,13 @@
     height: 0;
     margin-top: 0;
 }
+
+.stock-list-card {
+    padding: 20px;
+    box-shadow: 2px 2px 6px grey;
+    margin: 10px 0;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.01);
+    }
+}

@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
 import addStockToApi from '../../../services/Api.service';
-import { getStocksFromApi } from '../../../store/actions';
 
 const AddStockForm = (props) => {
     const [validated, setValidated] = useState(false);

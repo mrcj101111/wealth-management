@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import AddStock from './addStock/AddStock'
+import { Route } from 'react-router-dom';
 
 const NoStock = (props) => {
     return (
@@ -9,7 +10,7 @@ const NoStock = (props) => {
             <NavLink to="/stocks/add-stock">
                 <button type="button" className="btn btn-primary">Add stock</button>
             </NavLink>
-            
+            <Route  path="/stocks/add-stock" component={AddStock} />
         </>
     )
 }

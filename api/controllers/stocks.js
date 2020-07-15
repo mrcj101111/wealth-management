@@ -8,11 +8,11 @@ exports.getStocks = (req, res) => {
         .select().then(result => {
             obj = result.map(stocks => {
                 return getLatestPrice(stocks.symbol).then(price => {
-                    const prevClosePrice = price;
-                    const cost = stocks.amount_of_shares * stocks.purchase_price;
-                    const marketValue = stocks.amount_of_shares * prevClosePrice;
-                    const gainOrLoss = marketValue - cost;
-                    const growth = gainOrLoss / cost;
+                    const prevClosePrice = parseFloat(price.replace(/,/g, '')).toFixed(2);
+                    const cost = (stocks.amount_of_shares * stocks.purchase_price).toFixed(2);
+                    const marketValue = (stocks.amount_of_shares * prevClosePrice).toFixed(2);
+                    const gainOrLoss = (marketValue - cost).toFixed(2);
+                    const growth = (gainOrLoss / cost).toFixed(2);
 
                     return {
                         id: stocks.stock_id,
