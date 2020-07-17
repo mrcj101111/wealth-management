@@ -22,16 +22,19 @@
         &.delete {
             &:hover {
                 color: red;
+                cursor: pointer;
             }
         }
         &.view {
             &:hover {
                 color: rgb(50, 50, 110);
+                cursor: pointer;
             }
         }
         &.update {
             &:hover {
                 color: brown;
+                cursor: pointer;
             }
         }
     }

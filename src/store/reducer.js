@@ -12,6 +12,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 stocks: action.payload.stocks
             }
+        case actionTypes.DELETE_STOCK:
+            return {
+                ...state,
+                stocks: state.stocks.filter(stock => stock.id !== action.payload.id)
+            }
         default:
             return state;
     }

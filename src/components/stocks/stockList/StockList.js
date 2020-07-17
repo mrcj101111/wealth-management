@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { faTrashAlt, faEye, faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { connect } from "react-redux";
+import { dispatchDeleteStock } from '../../../store/actions';
 
 const StockList = (props) => {
     return (
@@ -10,17 +12,17 @@ const StockList = (props) => {
                 return (
                     <div className="stock-list-card" key={stocks.id}>
                         <div className="row">
-                            <div className="col-3">
+                            <div className="col-2">
                                 {stocks.company + ' '}
                                     ({stocks.symbol})
                                 </div>
-                            <div className="col-2">
+                            <div className="col-3">
                                 <strong>Cost: </strong>
-                                {stocks.cost}
+                                ${stocks.cost}
                             </div>
                             <div className="col-3">
                                 <strong>Market Value: </strong>
-                                {stocks.marketValue}
+                                ${stocks.marketValue}
                             </div>
                             <div className="col">
                                 <strong>Profit/Loss: </strong>
@@ -31,7 +33,7 @@ const StockList = (props) => {
                             <NavLink key={stocks.id} to={`/stocks/${stocks.id}`}>
                                 <FontAwesomeIcon className="stock-list-card__icon view float-right" icon={faEye} size="lg" />
                             </NavLink>
-                            <FontAwesomeIcon className="stock-list-card__icon delete float-right" icon={faTrashAlt} size="lg" />
+                            <FontAwesomeIcon onClick={() => props.dispatch(dispatchDeleteStock(stocks.id))} className="stock-list-card__icon delete float-right" icon={faTrashAlt} size="lg" />
                             <FontAwesomeIcon className="stock-list-card__icon update float-right" icon={faPenAlt} size="lg" />
                         </div>
                     </div>
