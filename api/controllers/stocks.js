@@ -19,7 +19,7 @@ exports.getStocks = (req, res) => {
                         symbol: stocks.symbol,
                         company: stocks.company_name,
                         shares: stocks.amount_of_shares,
-                        purchase_price: stocks.purchase_price,
+                        purchasePrice: stocks.purchase_price,
                         prevClosePrice: prevClosePrice,
                         cost: cost,
                         marketValue: marketValue,
@@ -34,8 +34,8 @@ exports.getStocks = (req, res) => {
                 })
             })
             Promise.all(obj).then(data => {
-                vaa = data.map(values => values)
-                res.status(200).json(vaa)
+                stocks = data.map(values => values)
+                res.status(200).json(stocks)
             })
         })
         .catch(err => {

@@ -21,3 +21,17 @@
         transform: scale(1.01);
     }
 }
+
+.stock-list-view {
+    padding: 20px;
+    box-shadow: 2px 2px 6px grey;
+    text-transform: capitalize;
+}
+
+a {
+    color: black;
+    &:hover {
+        text-decoration: none;
+        color: black;
+    }
+}
