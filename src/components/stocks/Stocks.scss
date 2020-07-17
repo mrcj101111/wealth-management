@@ -16,9 +16,24 @@
     padding: 20px;
     box-shadow: 2px 2px 6px grey;
     margin: 10px 0;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.01);
+    .stock-list-card__icon {
+        color: #6d6d6d;
+        margin: 0 10px;
+        &.delete {
+            &:hover {
+                color: red;
+            }
+        }
+        &.view {
+            &:hover {
+                color: rgb(50, 50, 110);
+            }
+        }
+        &.update {
+            &:hover {
+                color: brown;
+            }
+        }
     }
 }
 
