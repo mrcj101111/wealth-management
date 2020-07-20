@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ViewStock from './viewStock/ViewStock';
 import { NavLink } from 'react-router-dom';
 import StockList from './stockList/StockList';
+import EditStock from './editStock/EditStock';
 
 class Stocks extends React.Component {
     componentDidMount() {
@@ -45,6 +46,7 @@ class Stocks extends React.Component {
                 }} />
                 <Route exact path="/stocks/:id" component={ViewStock} />
                 <Route exact path="/stocks/add-stock" component={AddStock} />
+                <Route exact path="/stocks/edit-stock/:id" component={EditStock} />
             </>
         )
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { faTrashAlt, faEye, faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { connect } from "react-redux";
 import { dispatchDeleteStock } from '../../../store/actions';
 
 const StockList = (props) => {
@@ -30,11 +29,13 @@ const StockList = (props) => {
                                     {stocks.growth}%
                                 </div>
                             </div>
-                            <NavLink key={stocks.id} to={`/stocks/${stocks.id}`}>
+                            <NavLink to={`/stocks/${stocks.id}`}>
                                 <FontAwesomeIcon className="stock-list-card__icon view float-right" icon={faEye} size="lg" />
                             </NavLink>
                             <FontAwesomeIcon onClick={() => props.dispatch(dispatchDeleteStock(stocks.id))} className="stock-list-card__icon delete float-right" icon={faTrashAlt} size="lg" />
-                            <FontAwesomeIcon className="stock-list-card__icon update float-right" icon={faPenAlt} size="lg" />
+                            <NavLink to={`/stocks/edit-stock/${stocks.id}`}>
+                                <FontAwesomeIcon className="stock-list-card__icon update float-right" icon={faPenAlt} size="lg" />
+                            </NavLink>
                         </div>
                     </div>
                 )
