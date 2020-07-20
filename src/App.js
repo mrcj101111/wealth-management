@@ -13,10 +13,10 @@ function App() {
     <div>
       <div className="container-fluid p-0">
         <div className="row w-100">
-          <div className="col-2 d-table">
+          <div className="col-3 main-sidebar">
             <Sidebar />
           </div>
-          <div className="col">
+          <div className="col main-content">
             <Switch>
               <Route exact path="/" component={Dashboard} />
               <Route path="/stocks" component={Stocks} />

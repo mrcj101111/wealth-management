@@ -12,7 +12,7 @@ exports.getStocks = (req, res) => {
                     const cost = (stocks.amount_of_shares * stocks.purchase_price).toFixed(2);
                     const marketValue = (stocks.amount_of_shares * prevClosePrice).toFixed(2);
                     const gainOrLoss = (marketValue - cost).toFixed(2);
-                    const growth = (gainOrLoss / cost).toFixed(2);
+                    const growth = (gainOrLoss / cost * 100).toFixed(2);
 
                     return {
                         id: stocks.stock_id,

@@ -1,11 +1,14 @@
+@import "../../utilities/variables";
+
 .sidebar {
     text-align: center;
     color: white;
     background: #2a3f54;
-    width: 70px;
-    height: 100vh;
+    width: $mobile-sidebar-width;
+    height: 100%;
     padding-top: 20px;
     padding-left: 0;
+    position: fixed;
     .title {
         text-align: center;
     }
@@ -62,10 +65,10 @@
 
 //Media queries
 
-@media (min-width: 762px) {
+@media (min-width: 992px) {
     .sidebar {
         text-align: left;
-        width: 250px;
+        width: $sidebar-width;
         h1 {
             display: inline;
         }

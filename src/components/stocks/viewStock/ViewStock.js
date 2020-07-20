@@ -8,7 +8,7 @@ class ViewStock extends React.Component {
             Object.values(this.props.stocks).map(value => {
                 if (value.id.toString() === this.props.match.params.id) {
                     return (
-                        <div className="stock-list-view" key={value.id}>
+                        <div className="stock-card-view" key={value.id}>
                             {Object.entries(value).map(data => {
                                 if (data[0] !== 'id') {
                                     return (

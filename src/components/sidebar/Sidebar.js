@@ -11,7 +11,7 @@ function Hello() {
                 <FontAwesomeIcon icon={faBolt} size="2x" />
                 <h1>Wealth Manager</h1>
             </div>
-            <div className="d-none d-md-block sidebar__profile-picture">
+            <div className="d-none d-lg-block sidebar__profile-picture">
                 <img src={profile} alt="profile"></img>
                 <div className="d-inline-block align-middle pl-4">
                     Corné Botma

@@ -3,6 +3,7 @@ For more information, please visit http://getbem.com/ */
 
 @import "./components/sidebar/Sidebar.scss";
 @import "./components/stocks/Stocks.scss";
+@import "./utilities/variables";
 
 .main-section {
     margin-top: 20px;
@@ -20,5 +21,18 @@ For more information, please visit http://getbem.com/ */
             transform: scale(1.1);
             transition: ease 0.4s;
         }
+    }
+}
+
+.main-sidebar {
+    flex: 0 0 $mobile-sidebar-width;
+    margin-right: 25px;
+}
+
+//Media queries
+
+@media (min-width: 992px) {
+    .main-sidebar {
+        flex: 0 0 $sidebar-width;
     }
 }
